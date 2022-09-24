@@ -1,0 +1,15 @@
+import random 
+from numpy import array as npa 
+
+data = npa( random.sample( range(-100,101),20 ) )
+
+def SelectionSort(Array) :
+  for i in range(0 , len(Array) ) :
+    min = i 
+    for j in range(i+1, len(Array) ) :
+      if Array[j] < Array[min] :
+        Array[j] , Array [min]  = Array[min] , Array[j]
+  return Array
+
+print('The array before Selection Sort : ',data) 
+print('The array after Selection Sort : ',SelectionSort(data))
