@@ -1,0 +1,28 @@
+import numpy 
+
+
+def BinarySearch( Array, lower, upper, num ) :
+
+  if upper >= lower :
+    mid  = (lower + upper)//2 
+
+    if Array[mid] == num :
+      return mid 
+
+    elif num < Array[mid] :
+      return BinarySearch( Array, lower, mid -1 , num )
+
+    else :
+      return BinarySearch( Array, mid+1, upper, num )
+    
+  else :
+    return -1  #element does not exist
+
+
+data = numpy.array( range(0,101,10) ) # we have a sorted array here 
+
+print('The array is',data)
+
+x = int(input('Enter the element to search :'))
+
+print('The index of {} is {} '.format(x,BinarySearch(data,0,len(data)-1,x) ) )
